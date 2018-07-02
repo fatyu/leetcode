@@ -23,15 +23,15 @@ public class NTHDigit {
         //1.快速计算一个数字位数
         int digitLength = 1;
         int indexSum = 0, frontNumSum = 0;
-        while (n > (indexSum += (Math.pow(10, digitLength) - 1))) {
-            frontNumSum += ((digitLength - 1) * 10 + 1) * 9;
+        while (n > (indexSum += digitLength * 9 * Math.pow(10, (digitLength - 1)))) {
+            frontNumSum += digitLength * 9 * Math.pow(10, (digitLength - 1));
             digitLength++;
         }
         //2.计算当前位数剩余的数字数量
         int leftCount = n - frontNumSum;//计算是所在位数的第几个数字
         int indexCount = (int) Math.ceil(((double) leftCount / digitLength));
         int left = (leftCount % digitLength) == 0 ? (digitLength - 1) : ((leftCount % digitLength) - 1);
-        String resultNum = "" + (indexCount + Math.pow(10, digitLength - 1) - 1);
+        String resultNum = "" + (indexCount + (int) Math.pow(10, digitLength - 1) - 1);
         char charAt = resultNum.charAt(left);
         return Integer.valueOf(String.valueOf(charAt));
     }
@@ -39,8 +39,10 @@ public class NTHDigit {
     public static void main(String[] args) {
         NTHDigit digit = new NTHDigit();
         System.out.println(
-                digit.findNthDigit(3437));
+                digit.findNthDigit(100));
 
 
     }
+
+
 }
