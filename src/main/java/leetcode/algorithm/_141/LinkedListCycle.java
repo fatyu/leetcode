@@ -17,7 +17,7 @@ public class LinkedListCycle {
      *     }
      * }
      */
-    //解题思路：
+    //解题思路：如果出现环形链，则通过一个快指针和一个慢指针进行链表循环，终究两个指针会相撞。
     public boolean hasCycle(ListNode head) {
 
         if (head == null || head.next == null) {
