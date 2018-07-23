@@ -1,4 +1,4 @@
-package leetcode.algorithm._09;
+package leetcode.algorithm._009;
 
 /**
  Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
