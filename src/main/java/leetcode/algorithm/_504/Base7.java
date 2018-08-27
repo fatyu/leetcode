@@ -27,8 +27,8 @@ public class Base7 {
         int divide = number / 7;
         int cal = number % 7;
         result += (int) (Math.pow(10, count - 1) * cal);
-        if (divide > 7) {
-            result += calNum(result, divide, count);
+        if (divide >= 7) {
+            result += calNum(0, divide, count);
         } else {
             result += (int) (Math.pow(10, count) * divide);
         }
