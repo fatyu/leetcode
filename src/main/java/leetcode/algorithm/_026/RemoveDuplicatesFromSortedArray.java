@@ -42,20 +42,19 @@ public class RemoveDuplicatesFromSortedArray {
 			return 0;
 		}
 		int result = 1;
-		for (int i =0;i<nums.length;i++){
-
-			if((i+1<nums.length)&&nums[i]!=nums[i+1]){
-				nums[result ] = nums[i+1];
-				result +=1;
+		for (int i = 0; i < nums.length; i++) {
+			if ((i + 1 < nums.length) && nums[i] != nums[i + 1]) {
+				nums[result] = nums[i + 1];
+				result += 1;
 			}
 		}
-//		System.out.println(ArrayUtils.toString(nums));
+		//		System.out.println(ArrayUtils.toString(nums));
 		return result;
 	}
 
 	public static void main(String[] args) {
 		RemoveDuplicatesFromSortedArray obj = new RemoveDuplicatesFromSortedArray();
-		System.out.println(obj.removeDuplicates(new int[]{1,1,2,3,3,4}));
+		System.out.println(obj.removeDuplicates(new int[]{1, 1, 2, 3, 3, 4}));
 	}
 }
 

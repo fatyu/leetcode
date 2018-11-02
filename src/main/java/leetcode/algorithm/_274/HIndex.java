@@ -15,24 +15,24 @@ import java.util.Arrays;
  */
 public class HIndex {
 
-    public int hIndex(int[] citations) {
-        //首先进行数组数据排序 低->高
-        Arrays.sort(citations);
-        int length = citations.length;
-        //遍历数组 坐标值小于等于已经遍历过的数量即可
-        for (int i = 0; i < length; i++) {
-            int currentCount = length - i;
-            if (citations[i] >= currentCount) {
-                return currentCount;
-            }
-        }
-        return 0;
-    }
+	public int hIndex(int[] citations) {
+		//首先进行数组数据排序 低->高
+		Arrays.sort(citations);
+		int length = citations.length;
+		//遍历数组 坐标值小于等于已经遍历过的数量即可
+		for (int i = 0; i < length; i++) {
+			int currentCount = length - i;
+			if (citations[i] >= currentCount) {
+				return currentCount;
+			}
+		}
+		return 0;
+	}
 
-    public static void main(String[] args) {
-        HIndex hIndex = new HIndex();
-        int[] citations = new int[]{3, 0, 6, 1, 5};
-        int hindex = hIndex.hIndex(citations);
-        System.out.println("the h-index is :" + hindex);
-    }
+	public static void main(String[] args) {
+		HIndex hIndex = new HIndex();
+		int[] citations = new int[]{3, 0, 6, 1, 5};
+		int hindex = hIndex.hIndex(citations);
+		System.out.println("the h-index is :" + hindex);
+	}
 }

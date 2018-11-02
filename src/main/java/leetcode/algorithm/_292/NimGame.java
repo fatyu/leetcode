@@ -10,26 +10,26 @@ package leetcode.algorithm._292;
  */
 public class NimGame {
 
-    //解决问题的关键 找寻必胜规律
-    // heap stoneNum == 1  first gamer win
-    // heap stoneNum == 2  first gamer win
-    // heap stoneNum == 3  first gamer win
-    // heap stoneNum == 4  second gamer win
-    // heap stoneNum == 5  first gamer win
-    // heap stoneNum == 6  first gamer win
-    // heap stoneNum == 7  first gamer win
-    // heap stoneNum == 8  second gamer win
-    // ...
-    // ...
+	//解决问题的关键 找寻必胜规律
+	// heap stoneNum == 1  first gamer win
+	// heap stoneNum == 2  first gamer win
+	// heap stoneNum == 3  first gamer win
+	// heap stoneNum == 4  second gamer win
+	// heap stoneNum == 5  first gamer win
+	// heap stoneNum == 6  first gamer win
+	// heap stoneNum == 7  first gamer win
+	// heap stoneNum == 8  second gamer win
+	// ...
+	// ...
 
-    public boolean canWinNim(int n) {
-        return n % 4 > 0;
-    }
+	public boolean canWinNim(int n) {
+		return n % 4 > 0;
+	}
 
-    public static void main(String[] args) {
-        NimGame nimGame = new NimGame();
-        for (int i = 0; i < 100; i++) {
-            System.out.println("heap stone number is " + i + ",can you win? ->" + nimGame.canWinNim(i));
-        }
-    }
+	public static void main(String[] args) {
+		NimGame nimGame = new NimGame();
+		for (int i = 0; i < 100; i++) {
+			System.out.println("heap stone number is " + i + ",can you win? ->" + nimGame.canWinNim(i));
+		}
+	}
 }

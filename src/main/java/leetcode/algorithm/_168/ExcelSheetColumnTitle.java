@@ -29,17 +29,18 @@ package leetcode.algorithm._168;
  */
 
 public class ExcelSheetColumnTitle {
-    public String convertToTitle(int num) {
-        String result = "";
-        while (num > 0) {
-            result = String.valueOf((char) ('A' + --num % 26)) + result;
-            num/=26;
-        }
-        return result;
-    }
-    public static void main(String[] args) {
-        ExcelSheetColumnTitle esct = new ExcelSheetColumnTitle();
-        System.out.println(esct.convertToTitle(52));
-    }
+	public String convertToTitle(int num) {
+		String result = "";
+		while (num > 0) {
+			result = String.valueOf((char) ('A' + --num % 26)) + result;
+			num /= 26;
+		}
+		return result;
+	}
+
+	public static void main(String[] args) {
+		ExcelSheetColumnTitle esct = new ExcelSheetColumnTitle();
+		System.out.println(esct.convertToTitle(52));
+	}
 
 }

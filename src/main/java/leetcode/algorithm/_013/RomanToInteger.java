@@ -60,37 +60,37 @@ import java.util.Map;
 
  */
 public class RomanToInteger {
-    private static Map<Character, Integer> romanMap = new HashMap<>();
+	private static Map<Character, Integer> romanMap = new HashMap<>();
 
-    static {
-        romanMap.put('I', 1);
-        romanMap.put('V', 5);
-        romanMap.put('X', 10);
-        romanMap.put('L', 50);
-        romanMap.put('C', 100);
-        romanMap.put('D', 500);
-        romanMap.put('M', 1000);
-    }
+	static {
+		romanMap.put('I', 1);
+		romanMap.put('V', 5);
+		romanMap.put('X', 10);
+		romanMap.put('L', 50);
+		romanMap.put('C', 100);
+		romanMap.put('D', 500);
+		romanMap.put('M', 1000);
+	}
 
-    public int convertToInt(String roman) {
-        int result = 0;
-        char[] chars = roman.toCharArray();
+	public int convertToInt(String roman) {
+		int result = 0;
+		char[] chars = roman.toCharArray();
 
-        for (int i = 0; i < roman.length() - 1; i++) {
-            int curr = romanMap.get(chars[i]);
-            int next = romanMap.get(chars[i + 1]);
-            if (curr < next) {
-                result -= curr;
-            } else {
-                result += curr;
-            }
-        }
-        result += romanMap.get(chars[chars.length - 1]);
-        return result;
-    }
+		for (int i = 0; i < roman.length() - 1; i++) {
+			int curr = romanMap.get(chars[i]);
+			int next = romanMap.get(chars[i + 1]);
+			if (curr < next) {
+				result -= curr;
+			} else {
+				result += curr;
+			}
+		}
+		result += romanMap.get(chars[chars.length - 1]);
+		return result;
+	}
 
-    public static void main(String[] args) {
-        RomanToInteger romanToInteger = new RomanToInteger();
-        System.out.println(romanToInteger.convertToInt("IIIIX"));
-    }
+	public static void main(String[] args) {
+		RomanToInteger romanToInteger = new RomanToInteger();
+		System.out.println(romanToInteger.convertToInt("IIIIX"));
+	}
 }

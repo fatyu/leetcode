@@ -28,29 +28,29 @@ package leetcode.algorithm._009;
 public class PalindromeNumber {
 
 
-    public boolean isPalindrome(int n) {
-        if (n < 0) {
-            return false;
-        }
-        if (n < 10) {
-            return true;
-        }
+	public boolean isPalindrome(int n) {
+		if (n < 0) {
+			return false;
+		}
+		if (n < 10) {
+			return true;
+		}
 
-        int dividNum = 1;
-        while (n / dividNum > 10) {
-            dividNum *= 10;
-        }
+		int dividNum = 1;
+		while (n / dividNum > 10) {
+			dividNum *= 10;
+		}
 
-        while (n > 0) {
-            int h = n / dividNum;//高位数字
-            int l = n % 10;
-            if (h == l) {
-                n = (n%dividNum)/10;
-                dividNum /= 100;//删除两位
-            } else {
-                return false;
-            }
-        }
-        return false;
-    }
+		while (n > 0) {
+			int h = n / dividNum;//高位数字
+			int l = n % 10;
+			if (h == l) {
+				n = (n % dividNum) / 10;
+				dividNum /= 100;//删除两位
+			} else {
+				return false;
+			}
+		}
+		return false;
+	}
 }

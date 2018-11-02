@@ -31,34 +31,34 @@ import leetcode.algorithm._226.TreeNode;
  */
 public class SameTree {
 
-    public boolean isSameTree(TreeNode p, TreeNode q) {
-        if (p != null && q != null) {
-            if (p.val != q.val) {
-                return false;
-            }
-        } else if (p == null && q == null) {
-            return true;
-        } else {
-            return false;
-        }
-        if (!isSameTree(p.left
-                , q.left)) return false;
-        if (!isSameTree(p.right
-                , q.right)) return false;
-        return true;
-    }
+	public boolean isSameTree(TreeNode p, TreeNode q) {
+		if (p != null && q != null) {
+			if (p.val != q.val) {
+				return false;
+			}
+		} else if (p == null && q == null) {
+			return true;
+		} else {
+			return false;
+		}
+		if (!isSameTree(p.left, q.left))
+			return false;
+		if (!isSameTree(p.right, q.right))
+			return false;
+		return true;
+	}
 
-    public static void main(String[] args) {
-        TreeNode p = new TreeNode(0);
-        p.left = new TreeNode(-5);
+	public static void main(String[] args) {
+		TreeNode p = new TreeNode(0);
+		p.left = new TreeNode(-5);
 
-        TreeNode q = new TreeNode(0);
+		TreeNode q = new TreeNode(0);
 
-        q.left = new TreeNode(-8);
-        SameTree st = new SameTree();
-        System.out.println(st.isSameTree(p, q));
+		q.left = new TreeNode(-8);
+		SameTree st = new SameTree();
+		System.out.println(st.isSameTree(p, q));
 
-    }
+	}
 
 }
 

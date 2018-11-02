@@ -20,38 +20,39 @@ package leetcode.algorithm._463;
  判断上一个单元格，和左侧单元格是不是为1，如果为1则减少2
  */
 public class IslandPerimeter {
-    public int islandPerimeter(int[][] grid) {
-        int sum = 0;
-        int divide = 0;
-        int y = grid[0].length;
-        int x = grid.length;
+	public int islandPerimeter(int[][] grid) {
+		int sum = 0;
+		int divide = 0;
+		int y = grid[0].length;
+		int x = grid.length;
 
-        for (int i = x - 1; i >= 0; i--) {
-            for (int j = y - 1; j >= 0; j--) {
-                if (grid[i][j] == 1) {
-                    sum += 4;
-                    //判断左侧节点
-                    if(j>0){
-                        if(grid[i][j-1]==1){
-                            divide+=2;
-                        }
-                    }
-                    //判断上侧节点
-                    if(i>0){
-                        if(grid[i-1][j]==1){
-                            divide+=2;
-                        }
-                    }
-                }
+		for (int i = x - 1; i >= 0; i--) {
+			for (int j = y - 1; j >= 0; j--) {
+				if (grid[i][j] == 1) {
+					sum += 4;
+					//判断左侧节点
+					if (j > 0) {
+						if (grid[i][j - 1] == 1) {
+							divide += 2;
+						}
+					}
+					//判断上侧节点
+					if (i > 0) {
+						if (grid[i - 1][j] == 1) {
+							divide += 2;
+						}
+					}
+				}
 
-            }
-        }
-        return sum-divide;
-    }
+			}
+		}
+		return sum - divide;
+	}
 
-    public static void main(String[] args) {
-        IslandPerimeter ilp = new IslandPerimeter();
-        int[][] data = {{1,0,0,1},{0,0,1,0}};
-        System.out.println( ilp.islandPerimeter(data)); ;
-    }
+	public static void main(String[] args) {
+		IslandPerimeter ilp = new IslandPerimeter();
+		int[][] data = {{1, 0, 0, 1}, {0, 0, 1, 0}};
+		System.out.println(ilp.islandPerimeter(data));
+		;
+	}
 }

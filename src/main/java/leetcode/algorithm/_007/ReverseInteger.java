@@ -20,19 +20,19 @@ package leetcode.algorithm._007;
  因为有数字越界问题，使用长整型进行数字结果的存储，最终进行和Integer的最大值最小值比较。
  */
 public class ReverseInteger {
-    public int reverse(int num) {
-        long result = 0;
-        while (num != 0) {//当数字不为0
-            result = result * 10 + num % 10;
-            num /= 10;
-        }
-        return result>Integer.MAX_VALUE||result< Integer.MIN_VALUE?0:(int)result;
-    }
+	public int reverse(int num) {
+		long result = 0;
+		while (num != 0) {//当数字不为0
+			result = result * 10 + num % 10;
+			num /= 10;
+		}
+		return result > Integer.MAX_VALUE || result < Integer.MIN_VALUE ? 0 : (int) result;
+	}
 
-    public static void main(String[] args) {
-        ReverseInteger ri = new ReverseInteger();
-        System.out.println(ri.reverse(23324));
-        System.out.println(ri.reverse(2332040));
-        System.out.println(ri.reverse(-943487));
-    }
+	public static void main(String[] args) {
+		ReverseInteger ri = new ReverseInteger();
+		System.out.println(ri.reverse(23324));
+		System.out.println(ri.reverse(2332040));
+		System.out.println(ri.reverse(-943487));
+	}
 }

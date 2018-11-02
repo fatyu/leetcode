@@ -47,49 +47,50 @@ package leetcode.algorithm._087;
 
 public class ScrambleString {
 
-    public boolean isScramble(String s1, String s2) {
-        if (null == s1 || null == s2) {
-            return false;
-        }
-        if (s1.equals(s2)) {
-            return true;
-        }
-        if (s1.length() != s2.length()) {
-            return false;
-        }
+	public boolean isScramble(String s1, String s2) {
+		if (null == s1 || null == s2) {
+			return false;
+		}
+		if (s1.equals(s2)) {
+			return true;
+		}
+		if (s1.length() != s2.length()) {
+			return false;
+		}
 
-        //判断两个字符串的字母类型和数量是否相同
+		//判断两个字符串的字母类型和数量是否相同
 
-        int[] chars = new int[26];
+		int[] chars = new int[26];
 
-        int stringLength = s1.length();
-        for (int i = 0; i < stringLength; i++) {
-            chars[s1.charAt(i) - 'a']++;
-            chars[s2.charAt(i) - 'a']--;
-        }
-        for (int i = 0; i < 26; i++) {
-            if (chars[i] != 0) {
-                return false;
-            }
-        }
-        //递归判断两个字符串的子字符串是否是ScrambleString
-        for (int i = 1; i < stringLength; i++) {
-            //同顺序判断
-            if (isScramble(s1.substring(0, i), s2.substring(0, i)) && isScramble(s1.substring(i), s2.substring(i))) {
-                return true;
-            }
-            //反顺序判断
-            if (isScramble(s1.substring(0, i), s2.substring(stringLength - i)) && isScramble(s1.substring(i), s2.substring(0, stringLength - i))) {
-                return true;
-            }
-        }
+		int stringLength = s1.length();
+		for (int i = 0; i < stringLength; i++) {
+			chars[s1.charAt(i) - 'a']++;
+			chars[s2.charAt(i) - 'a']--;
+		}
+		for (int i = 0; i < 26; i++) {
+			if (chars[i] != 0) {
+				return false;
+			}
+		}
+		//递归判断两个字符串的子字符串是否是ScrambleString
+		for (int i = 1; i < stringLength; i++) {
+			//同顺序判断
+			if (isScramble(s1.substring(0, i), s2.substring(0, i)) && isScramble(s1.substring(i), s2.substring(i))) {
+				return true;
+			}
+			//反顺序判断
+			if (isScramble(s1.substring(0, i), s2.substring(stringLength - i)) && isScramble(s1.substring(i),
+					s2.substring(0, stringLength - i))) {
+				return true;
+			}
+		}
 
-        return false;
-    }
+		return false;
+	}
 
 
-    public static void main(String[] args) {
-        ScrambleString ss = new ScrambleString();
-        System.out.println(ss.isScramble("great", "retga"));
-    }
+	public static void main(String[] args) {
+		ScrambleString ss = new ScrambleString();
+		System.out.println(ss.isScramble("great", "retga"));
+	}
 }
