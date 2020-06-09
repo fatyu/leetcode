@@ -17,9 +17,9 @@ package leetcode.algorithm.string._014;
  Note:
 
  All given inputs are in lowercase letters a-z.
-
+ --
  解题思路：将数字字符串进行遍历生成多个
-//TODO Failed
+ @ResultTag Failed
  */
 public class LongestCommonPrefix {
 	public String longestCommonPrefix(String[] strs) {
